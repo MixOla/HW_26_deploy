@@ -50,6 +50,7 @@ class PostDAO:
         substring = substring.lower()
 
         matching_posts = [post for post in posts if substring in post.content.lower()]
+
         return matching_posts
 
 

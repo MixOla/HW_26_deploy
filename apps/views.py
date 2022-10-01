@@ -53,7 +53,6 @@ def page_posts_search():
     else:
         posts = posts_dao.search_for_posts(query)[:10]
         len_posts = len(posts)
-
     return render_template("search.html", posts=posts, query=query, len_posts=len_posts)
 
 
