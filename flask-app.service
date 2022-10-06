@@ -3,8 +3,8 @@ Description=Flask app service
 After=network.target
 
 [Service]
-WorkingDirectory=/home/mixola/app
-ExecStart=/home/mixola/app/venv/bin/python main.py
+WorkingDirectory=/home/omix/app
+ExecStart=/home/omix/app/venv/bin/python main.py
 
 [install]
 WantedBy=multi-user.target
