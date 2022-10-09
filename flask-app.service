@@ -7,5 +7,5 @@ WorkingDirectory=/home/omix/app
 ExecStart=/home/omix/app/venv/bin/python -m gunicorn main:app -b 0.0.0.0:5000 -w 4
 
 
-[install]
+[Install]
 WantedBy=multi-user.target

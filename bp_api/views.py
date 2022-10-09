@@ -1,5 +1,6 @@
 import logging
 
+from db import db
 from flask import Blueprint, jsonify, abort
 from apps.posts.dao.post_dao import PostDAO
 from apps.comments.dao.comment_dao import CommentDAO
@@ -48,3 +49,15 @@ def api_post_single(pk):
 def api_error_404(error):
     api_logger.error(f"Ошибка {error}")
     return jsonify({"error": str(error)}), 404
+
+@bp_api.route('/test_db')
+def test_db():
+    result = db.session.execute(
+        'SELECT 17'
+    ).scalar()
+
+    return jsonify(
+        {
+            'result': result,
+        }
+    ), 200
